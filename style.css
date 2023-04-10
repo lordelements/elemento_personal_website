@@ -1,0 +1,325 @@
+        
+       :root {
+        --text-color: #fff;
+        --bg-color: #121212;
+        --slider-bg-color: #b0b0b0;
+        --bg-nav-color: #1A120B;
+        --main-text-color:  #fff;
+        --span-bg-color: #FC7300; 
+        --bg-color-icons: #FC7300;
+        --download-btn: #FC7300;
+       }
+       .light {
+        --text-color: #121212;
+        --bg-color: #fff;
+        --bg-nav-color: #E5E5CB;
+        --main-text-color:  #1A120B;
+        --span-bg-color: #FFC93C; 
+        --bg-color-icons:#FFC93C;
+        --download-btn:#FFC93C;
+       }
+       *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        body {
+            font-family: sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.5s;
+        }   
+        html {
+            scroll-behavior: smooth;
+        }
+       /* .home{
+            color: var(--main-text-color);
+        } */
+        nav {
+            /* position: fixed; */
+            height: 80px;
+            width: 100%;
+            /* background: #34495e; */
+            background: var(--bg-nav-color);
+        }
+        .nav-logo {
+            font-size: 35px;
+            font-weight: bold;
+            color: var(--text-color);
+            padding: 0 100px;
+            line-height: 80px;
+        }
+        .nav-logo span {
+            color: var(--span-bg-color);
+        }
+        nav ul {
+            float: right;
+            margin-right: 40px;
+        }
+        nav li {
+            display: inline-block;
+            margin: 0 8px;
+            line-height: 80px;
+        }
+        nav a {
+            color: var(--text-color);
+            font-size: 18px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            font-weight: bold;
+            padding: 7px 10px;
+            border-radius: 3px;
+        }
+        a.active,a:hover {
+            border: 1px solid var(--text-color);
+            transition: .5s;
+        }
+
+        /* nav #icon {
+            color: var(--text-color);
+            font-size: 30px;
+            line-height: 80px;
+            float: right;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        } */
+        nav .hamburger {
+            color: var(--text-color);
+            font-size: 30px;
+            line-height: 80px;
+            float: right;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        section {
+            width: 100%;
+            height: 700px;
+            
+          }
+          .toggle {
+            margin: 10px 8px 10px 8px;
+            line-height: 80px;
+            font-size: 17px;
+            position: relative;
+            display: inline-block;
+            width: 3.2em;
+            height: 2em;
+          }
+         .toggle input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+         }
+         .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background-color: var(--slider-bg-color);
+          border: 1px solid var(--slider-bg-color);
+          transition: .4s;
+          border-radius: 32px;
+          outline: none;
+         }
+         .slider:before {
+          position: absolute;
+          content: "";
+          height: 2rem;
+          width: 2rem;
+          border-radius: 50%;
+          outline: 2px solid var(--slider-bg-color);
+          left: -1px;
+          bottom: -1px;
+          background-color: var(--bg-color);
+          transition: transform .25s ease-in-out 0s;
+         }
+         .slider-icon {
+          opacity: 0;
+          height: 12px;
+          width: 12px;
+          stroke-width: 8;
+          position: absolute;
+          z-index: 999;
+          stroke: #222222;
+          right: 60%;
+          top: 30%;
+          transition: right ease-in-out .3s, opacity ease-in-out 15s;
+         }
+         input:checked + .slider {
+          background-color: #222222;
+         }
+         input:checked + .slider::before {
+          transform: translateX(1.5em);
+          outline-color: #181818;
+         }
+
+         /* HOME SECTION AND HERO SECTION */
+         section h1{
+            text-align: justify;
+            font-size: 50px;
+            color: var(--text-color);
+            margin: 100px 50px 0 100px;
+        }
+        section span {
+            color: var(--span-bg-color);
+        }
+        section h3 {
+            text-align: justify;
+            font-size: 30px;
+            color: var(--text-color);
+            margin: 10px 50px 0 100px;
+        }
+        section p {
+            text-align: justify;
+            font-size: 20px;
+            color: var(--text-color);
+            margin: 10px 50px 10px 100px;
+        }
+        .buttonDownload {
+            display: inline-block;
+            position: relative;
+            padding: 10px 25px;
+            background-color: var(--download-btn);
+            color: white;
+            font-family: sans-serif;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            text-indent: 15px;
+            border: none;
+            margin: 15px 50px 50px 100px;
+           }
+           
+           .buttonDownload:hover {
+            background-color: #FF7B54;
+            color: white;
+           }
+           
+           .buttonDownload:before, .buttonDownload:after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            left: 15px;
+            top: 52%;
+           }
+           
+           .buttonDownload:before {
+            width: 10px;
+            height: 2px;
+            border-style: solid;
+            border-width: 0 2px 2px;
+           }
+           
+           .buttonDownload:after {
+            width: 0;
+            height: 0;
+            margin-left: 3px;
+            margin-top: -7px;
+            border-style: solid;
+            border-width: 4px 4px 0 4px;
+            border-color: transparent;
+            border-top-color: inherit;
+            animation: downloadArrow 1s linear infinite;
+            animation-play-state: paused;
+           }
+           
+           .buttonDownload:hover:before {
+            border-color: #cdefbd;
+           }
+           
+           .buttonDownload:hover:after {
+            border-top-color: #cdefbd;
+            animation-play-state: running;
+           }
+           
+           @keyframes downloadArrow {
+            0% {
+             margin-top: -7px;
+             opacity: 1;
+            }
+           
+            0.001% {
+             margin-top: -15px;
+             opacity: 0.4;
+            }
+           
+            50% {
+             opacity: 1;
+            }
+           
+            100% {
+             margin-top: 0;
+             opacity: 0.4;
+            }
+           }
+           /* social icons */
+           .social-media {
+            display: flex !important;;
+            margin: 0 50px 0 100px;
+            border-radius: 100%;
+           }
+           .social-media svg{
+            width: 50px;
+            height: 50px;
+            background-color: var(--bg-color-icons);
+            margin: 0px 10px 0 1px;
+            border-radius: 100%;
+           }
+         /* END HOME SECTION AND HERO SECTION */
+
+
+
+@media (max-width: 1048px) { 
+    /* STYLES HERE */
+   label.nav-logo {
+    font-size: 32px;
+    padding-left: 60px;
+   }
+   nav ul {
+    margin-right: 20px;
+    
+   }
+   nav a {
+    font-size: 17px;
+   }
+}
+
+@media (max-width: 909px) {
+    nav .hamburger {
+        display: block;
+    }
+    /* nav #icon {
+        display: block;
+    } */
+    nav ul {
+        /* position: fixed; */
+        width: 100%;
+        background: #2f3640;
+        top: 80px;
+        left: 0;
+        text-align: center;
+        
+       }
+    nav li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav a {
+        font-size: 20px;
+
+    }
+    a.active,a:hover {
+        border: none;
+        color: #3498db;
+        transition: .5s;
+    }
+}
+        

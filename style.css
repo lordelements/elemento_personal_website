@@ -8,15 +8,17 @@
         --span-bg-color: #FC7300; 
         --bg-color-icons: #FC7300;
         --download-btn: #FC7300;
+        --bar-bg: #ffff;
        }
        .light {
-        --text-color: #121212;
-        --bg-color: #fff;
+        --text-color: #000000c9;
+        --bg-color: #ffffffbd;
         --bg-nav-color: #E5E5CB;
         --main-text-color:  #1A120B;
         --span-bg-color: #FFC93C; 
         --bg-color-icons:#FFC93C;
         --download-btn:#FFC93C;
+        --bar-bg: #000;
        }
        *{
             padding: 0;
@@ -34,16 +36,21 @@
         html {
             scroll-behavior: smooth;
         }
-       /* .home{
+       h1, h2, h3, h4, h5, h6{
             color: var(--main-text-color);
-        } */
+            font-size: clamp(1rem, 0.931rem + 3.6782vw, 3rem);;
+        }
+
         nav {
-            /* position: fixed; */
+            /* position: sticky; */
             height: 80px;
             width: 100%;
-            /* background: #34495e; */
-            background: var(--bg-nav-color);
         }
+        /* .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } */
         .nav-logo {
             font-size: 35px;
             font-weight: bold;
@@ -63,6 +70,9 @@
             margin: 0 8px;
             line-height: 80px;
         }
+        /* .nav-item {
+            margin-left: 4rem;
+        } */
         nav a {
             color: var(--text-color);
             font-size: 18px;
@@ -77,15 +87,6 @@
             transition: .5s;
         }
 
-        /* nav #icon {
-            color: var(--text-color);
-            font-size: 30px;
-            line-height: 80px;
-            float: right;
-            margin-right: 40px;
-            cursor: pointer;
-            display: none;
-        } */
         nav .hamburger {
             color: var(--text-color);
             font-size: 30px;
@@ -94,21 +95,46 @@
             margin-right: 40px;
             cursor: pointer;
             display: none;
+            margin-top: 10px;
         }
-
+        nav .bar{
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--bar-bg);
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+        }
         section {
+            /* transform-style: preserve-3d; */
+            /* position: relative; */
             width: 100%;
-            height: 700px;
-            
+            height: 100vh;
+            /* display: grid; */
+            /* place-items: center; */
+          }
+          .section .title-page{
+            display: grid;
+            place-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+          .darklight-mode {
+            font-size: 35px;
+            padding: 0 100px;
+            width: 20px;
+            /* line-height: 80px; */
           }
           .toggle {
-            margin: 10px 8px 10px 8px;
+            /* margin: 10px auto; */
+            margin-top: 10px;
             line-height: 80px;
             font-size: 17px;
             position: relative;
             display: inline-block;
-            width: 3.2em;
-            height: 2em;
+            width: 2em;
+            height: 1em;
           }
          .toggle input {
           opacity: 0;
@@ -125,14 +151,14 @@
           background-color: var(--slider-bg-color);
           border: 1px solid var(--slider-bg-color);
           transition: .4s;
-          border-radius: 32px;
+          border-radius: 25px;
           outline: none;
          }
          .slider:before {
           position: absolute;
           content: "";
-          height: 2rem;
-          width: 2rem;
+          height: 1rem;
+          width: 1rem;
           border-radius: 50%;
           outline: 2px solid var(--slider-bg-color);
           left: -1px;
@@ -194,7 +220,8 @@
             text-align: center;
             text-indent: 15px;
             border: none;
-            margin: 15px 50px 50px 100px;
+            margin: 17px 50px 50px 100px;
+            width: 190px;
            }
            
            .buttonDownload:hover {
@@ -265,26 +292,68 @@
             margin: 0 50px 0 100px;
             border-radius: 100%;
            }
+           .media-icons {
+            margin: 5px;
+            border: 1px solid #cdefbd;
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            outline: none !important;
+           }
+           .media-icons:hover:active{
+                background-color: #E5E5CB;
+           }
+
            .social-media svg{
             width: 50px;
             height: 50px;
             background-color: var(--bg-color-icons);
             margin: 0px 10px 0 1px;
             border-radius: 100%;
+            
            }
+           .social-media svg:hover{
+            width: 50px;
+            height: 50px;
+            background-color: #B9F3FC;
+            margin: 0px 10px 0 1px;
+            border-radius: 100%;
+            
+           }
+
+          .profile-img{
+            border-radius: 100%;
+            margin-left: 65rem;
+            width: 100%;
+           }
+           .profile-bg, .profile-img img{
+            position: absolute;
+            top: 200px;
+            background: var(--bg-color-icons);
+            border-top-right-radius: 5%;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 15%;
+            border-top-left-radius: 15%;
+            width: 350px;
+            height: 350px;
+           }
+         
          /* END HOME SECTION AND HERO SECTION */
 
 
 
-@media (max-width: 1048px) { 
+@media only screen and (max-width: 600px)   { 
     /* STYLES HERE */
-   label.nav-logo {
-    font-size: 32px;
-    padding-left: 60px;
+    .home {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+    }
+   .nav-logo {
+    display: none;
    }
-   nav ul {
-    margin-right: 20px;
-    
+   nav ul, li{
+    margin: auto;
    }
    nav a {
     font-size: 17px;
@@ -308,6 +377,7 @@
         
        }
     nav li {
+        /* display: none; */
         display: block;
         margin: 50px 0;
         line-height: 30px;

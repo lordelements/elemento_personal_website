@@ -19,26 +19,22 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
+    
         <nav class="navbar">
             <label class="nav-logo">
                 ELEM<span>ENTS</span>
             </label>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="active">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#project" class="nav-link">Project</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About me</a></li>
+                <li class="nav-item"><a href="#project" class="nav-link">Portfolio</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <!-- <label id="icon" class="hamburger">
-                <i class="fas fa-bars"></i>
-            </label> -->
-            
+            </div> 
             <div class="darklight-mode">
                 <label class="toggle">
                     <input type="checkbox">
@@ -56,7 +52,7 @@
             <!-- start home section-->
             <section id="home">           
                 <div class="profile-img">
-                    <img class="pic_img" src="self.png" alt="">
+                    <img class="pic_img" src="img/self.png" alt="">
                 </div>
                 <h1 class="title">Hello,</h1>
                 <h3 class="hero-section">I am <span>Andrian Elemento</span>
@@ -98,22 +94,25 @@
             <!-- end home section-->
 
             <section id="about" class="section" >
-                <h1 class="title-page" data-aos="fade-up"
-                data-aos-duration="1000"></h1>
-                <div class="container">
+                <!-- <h1 class="title-page" data-aos="fade-up"
+                data-aos-duration="1000"></h1> -->
+                <div class="container" data-aos="fade-up"
+                data-aos-duration="1000">
                     <article class="card">
                         <div class="card-image">
-                            <img src="self.png" alt=""/>
+                            <img class="about-img" src="img/self.png" alt=""/>
                         </div>
                         <div class="card-body">
-                            <h2 class="card-title">ABOUT ME</h2>
+                            <h2 class="card-title" data-aos="fade-left"
+                            data-aos-duration="1000">ABOUT ME</h2>
                             <h3 class="card-subtitle">“First, solve the problem. Then, write the code.” – John Johnson</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. I
                                 psa, maiores doloribus doloremque quis autem quae beatae reprehenderit 
                                 provident veniam iure necessitatibus voluptatibus minus eligendi minima, 
                                 fuga odit atque itaque quod.
                             </p>
-                            <a href="#" class="card-btn">
+                            <a href="#" class="card-btn" data-aos="fade-left"
+                            data-aos-duration="1000">
                                 Learn More<span>&rarr;</span>
                             </a>
                         </div>
@@ -122,7 +121,66 @@
             </section>
             <section id="project" class="section" >
                 <h1 class="title-page" data-aos="fade-up"
-                data-aos-duration="1000">PROJECT</h1>
+                data-aos-duration="1000">PORTFOLIO</h1>
+                <br>
+                <div class="container">
+                    <div class="box"  data-aos="fade-right"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="https://github.com/lordelements/product-landing-page">
+                                <img src="img/product-landing-page-2023-05-30-20_11_37.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="box" data-aos="fade-right"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="https://github.com/lordelements/MypersonalPorfoliowebsite">
+                                <img src="img\MypersonalPorfoliowebsite-2023-05-30-20_47_09.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="box" data-aos="fade-right"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="https://github.com/lordelements/Andrian-Flatbox-Design">
+                                <img src="img\Andrian-Flatbox-Design-2023-05-30-20_53_07.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="box" data-aos="fade-left"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="https://github.com/lordelements/learning-resource-app">
+                                <img src="img\learning-resource app.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="box" data-aos="fade-left"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="https://github.com/lordelements/Monster-Slayer-Game">
+                                <img src="img\Monster-Slayer-Game-2023-05-30-21_10_15.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="box" data-aos="fade-left"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="https://github.com/lordelements/Capstone_WBMSystem">
+                                <img src="img\WBMSystem-admin-index-php-2022-12-26-23_15_03.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="box" data-aos="fade-up"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="https://github.com/lordelements/LoginForm-InphpFunction">
+                                <img src="img\LoginForm-InphpFunction-login-php.png" alt=""></a>
+                        </article>
+                    </div>
+                    <div class="box" data-aos="fade-up"
+                    data-aos-duration="1000">
+                        <article>
+                            <a href="">
+                                <img src="" alt="img"></a>
+                        </article>
+                    </div>
+                </div>
             </section>
             <section id="contact" class="section" >
                 <h1 class="title-page" data-aos="fade-up"

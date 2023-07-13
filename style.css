@@ -5,28 +5,30 @@
         --slider-bg-color: #b0b0b0;
         --bg-nav-color: rgba(0, 0, 0, 0.089);
         --main-text-color:  #fff;
-        --span-bg-color: rgb(255, 133, 20); 
-        --bg-color-icons: #FC7300;
-        --download-btn: rgb(255, 133, 20);
+        --span-bg-color: #03C988; 
+        --bg-color-icons: #03C988;
+        --download-btn: #03C988;
         --bar-bg: #F9FBE7;
-        --card-bg-color: #FC7300;
-        --social-icon-color: #FC7300;
-        --glow-spread-social-icon-color: rgb(214, 83, 6);
-        --enhanced-glow-social-icon-color: rgb(236, 111, 9);
+        --card-bg-color: #03C988;
+        --social-icon-color: #03C988;
+        --border-active-color: #03C988;
+        --glow-spread-social-icon-color: rgb(6, 214, 204);
+        --enhanced-glow-social-icon-color: rgb(9, 236, 225);
        }
        .light {
         --text-color: #000000c9;
         --bg-color: #ffffffbd;
-        --bg-nav-color: #E5E5CB;
+        --bg-nav-color: #afafa034;
         --main-text-color:  #1A120B;
-        --span-bg-color: #FFC93C; 
-        --bg-color-icons:#FFC93C;
-        --download-btn:#f3b822;
+        --span-bg-color: #f87c56; 
+        --bg-color-icons:#f87c56;
+        --download-btn:#f87c56;
         --bar-bg: #000;
-        --card-bg-color: #FFC93C;
-        --social-icon-color: #FFC93C;
-        --glow-spread-social-icon-color: rgb(240, 174, 32);
-        --enhanced-glow-social-icon-color: rgb(247, 205, 20);
+        --card-bg-color: #f87c56;
+        --social-icon-color: #f87c56;
+        --border-active-color: #f87c56;
+        --glow-spread-social-icon-color: rgb(240, 98, 32);
+        --enhanced-glow-social-icon-color: rgb(240, 98, 32);
        }
        *{
             padding: 0;
@@ -88,7 +90,7 @@
         
         nav a {
             color: var(--text-color);
-            font-size: 18px;
+            font-size: 15px;
             text-transform: uppercase;
             border: 1px solid transparent;
             font-weight: bold;
@@ -96,7 +98,7 @@
             border-radius: 3px;
         }
         a.active,a:hover {
-            border: 1px solid var(--text-color);
+            border: 1px solid var(--border-active-color);
             transition: all 0.2s ease-in-out;
             -webkit-transition: all 0.2s ease-in-out;
             cursor: pointer;
@@ -129,12 +131,12 @@
             /* place-items: center; */
           }
           .section .title-page{
-            margin-top: 5em;
+            margin-top: 3em;
             display: grid;
             place-items: center;
             justify-content: center;
             text-align: center;
-            font-size: 40px;
+            font-size: 30px;
           }
           .darklight-mode {
             font-size: 35px;
@@ -210,13 +212,14 @@
             color: var(--span-bg-color);
         }
         #home{
-            margin-top: 10em;
+            padding: 10px;
         }
-        #home h3 {
+        #home .hero-section {
             text-align: justify;
             font-size: 30px;
             color: var(--text-color);
-            margin: 100px 50px 0 100px;
+            margin: 10rem 50px 0 100px;
+            /* margin: 100px 50px 0 100px; */
         }
         #home p {
             text-align: justify;
@@ -277,11 +280,11 @@
            }
            
            .buttonDownload:hover:before {
-            border-color: #cdefbd;
+            border-color: #E5FDD1;
            }
            
            .buttonDownload:hover:after {
-            border-top-color: #cdefbd;
+            border-top-color: #E5FDD1;
             animation-play-state: running;
            }
            
@@ -316,25 +319,26 @@
            .media-icons {
             display: space-between;
             margin: 6px;
-            box-shadow:  0 0 1em .25em var(--social-icon-color),
-            0 0 4em 1em var(--glow-spread-social-icon-color),
-            inset 0 0 .75em .25em var(--social-icon-color);
-            border: .25em var(--social-icon-color);
+            box-shadow:  0 0 0 .1em var(--social-icon-color),
+            0 0 .4em .2em var(--glow-spread-social-icon-color),
+            inset 0 0 5em 5em var(--social-icon-color);
+            border: .5em var(--social-icon-color);
             border-radius: 100%;
             width: 50px;
             height: 50px;
            }
+
            .media-icons:hover:active{
             box-shadow: 0 0 0.6em .25em var(--social-icon-color),
             0 0 2.5em 2em var(--glow-spread-social-icon-color),
             inset 0 0 .5em .25em var(--social-icon-color);
-    
             }
+
            .media-icons::after {
             background-color: var(--social-icon-color);
-            box-shadow: 0 0 1em .25em var(--social-icon-color),
+            box-shadow: 0 0 1em .2em var(--social-icon-color),
                     0 0 4em 2em var(--glow-spread-social-icon-color),
-                    inset 0 0 .75em .25em var(--social-icon-color);
+                    inset 0 0 .5em .5em var(--social-icon-color);
            }
 
            .social-media svg{
@@ -349,9 +353,9 @@
             width: 50px;
             height: 50px;
             background-color: var(--social-icon-color);
-            box-shadow: 0 0 1em .25em var(--social-icon-color),
-                    0 0 4em 2em var(--glow-spread-social-icon-color),
-            inset 0 0 .75em .25em var(--social-icon-color);
+            box-shadow: 0 0 .1em .2em var(--social-icon-color),
+                    0 0 4em .3em var(--glow-spread-social-icon-color),
+            inset 0 0 .7em .5em var(--social-icon-color);
             margin: 0px 10px 0 1px;
             border-radius: 100%;
             
@@ -373,8 +377,8 @@
          /* END HOME SECTION AND HERO SECTION */
 
          /* START ABOUT SECTION */
-        #about {
-            margin-top: 10rem;
+        #about, #project, #skill, #contact {
+            margin-top: 1.5rem;
             padding: 10px;
         } 
         #about .container {
@@ -402,7 +406,7 @@
             width: 50rem;
             height: 40rem;
             mix-blend-mode: normal;
-            background: #cdefbd;
+            background: #E5FDD1;
         }
         .card-body {
             flex: 1;
@@ -489,7 +493,9 @@
             margin: 10px;
             object-fit: cover;
         }
+        /* #skill {
 
+        } */
 
 @media screen and (max-width: 500px)   { 
     /* STYLES HERE */

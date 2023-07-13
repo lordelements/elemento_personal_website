@@ -3,7 +3,8 @@
         --text-color: #fff;
         --bg-color: #121212;
         --slider-bg-color: #b0b0b0;
-        --bg-nav-color: #1A120B;
+        --bg-nav-color: rgba(0, 0, 0, 0.089);
+        /* --bg-nav-color: #1A120B; */
         --main-text-color:  #fff;
         --span-bg-color: rgb(255, 133, 20); 
         --bg-color-icons: #FC7300;
@@ -58,11 +59,12 @@
             backdrop-filter: blur(8px);
             background: var(--bg-nav-color);
             color: var(--text-color);
-            
+            z-index: 2;
+
         }
         /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
         nav + .content {
-          padding-top: 102px;
+          padding-top: 100px;
         }
         
         .nav-logo {
@@ -128,6 +130,7 @@
             /* place-items: center; */
           }
           .section .title-page{
+            margin-top: 5em;
             display: grid;
             place-items: center;
             justify-content: center;
@@ -201,6 +204,9 @@
 
          /* HOME SECTION AND HERO SECTION */
 
+        section {
+            width: 100%;
+        }
         section span {
             color: var(--span-bg-color);
         }

@@ -5,11 +5,14 @@
         --slider-bg-color: #b0b0b0;
         --bg-nav-color: #1A120B;
         --main-text-color:  #fff;
-        --span-bg-color: #FC7300; 
+        --span-bg-color: rgb(255, 133, 20); 
         --bg-color-icons: #FC7300;
-        --download-btn: #FC7300;
+        --download-btn: rgb(255, 133, 20);
         --bar-bg: #F9FBE7;
         --card-bg-color: #FC7300;
+        --social-icon-color: #FC7300;
+        --glow-spread-social-icon-color: rgb(214, 83, 6);
+        --enhanced-glow-social-icon-color: rgb(236, 111, 9);
        }
        .light {
         --text-color: #000000c9;
@@ -18,9 +21,12 @@
         --main-text-color:  #1A120B;
         --span-bg-color: #FFC93C; 
         --bg-color-icons:#FFC93C;
-        --download-btn:#FFC93C;
+        --download-btn:#f3b822;
         --bar-bg: #000;
         --card-bg-color: #FFC93C;
+        --social-icon-color: #FFC93C;
+        --glow-spread-social-icon-color: rgb(240, 174, 32);
+        --enhanced-glow-social-icon-color: rgb(247, 205, 20);
        }
        *{
             padding: 0;
@@ -34,7 +40,7 @@
             font-family: sans-serif;
             background: var(--bg-color);
             color: var(--text-color);
-            transition: all 0.5s;
+            /* width: 100%; */
         }   
         html {
             scroll-behavior: smooth;
@@ -43,10 +49,20 @@
             color: var(--main-text-color);
             font-size: clamp(1rem, 0.931rem + 3.6782vw, 3rem);;
         }
-        .navbar {
-            position: static;
-            height: 80px;
+        nav { /* The sticky class is added to the header with JS when it reaches its scroll position */
+            position: fixed;
+            top: 0;
+            height: 70px;
             width: 100%;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            background: var(--bg-nav-color);
+            color: var(--text-color);
+            
+        }
+        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+        nav + .content {
+          padding-top: 102px;
         }
         
         .nav-logo {
@@ -80,7 +96,9 @@
         }
         a.active,a:hover {
             border: 1px solid var(--text-color);
-            transition: .5s;
+            transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            cursor: pointer;
         }
         nav .hamburger {
             color: var(--text-color);
@@ -182,46 +200,47 @@
          }
 
          /* HOME SECTION AND HERO SECTION */
-         section h1{
-            text-align: justify;
-            font-size: 50px;
-            color: var(--text-color);
-            margin: 100px 50px 0 100px;
-        }
+
         section span {
             color: var(--span-bg-color);
         }
-        section h3 {
+        #home{
+            margin-top: 10em;
+        }
+        #home h3 {
             text-align: justify;
             font-size: 30px;
             color: var(--text-color);
-            margin: 10px 50px 0 100px;
+            margin: 100px 50px 0 100px;
         }
-        section p {
+        #home p {
             text-align: justify;
             font-size: 20px;
             color: var(--text-color);
             margin: 10px 50px 10px 100px;
         }
+        
         .buttonDownload {
             display: inline-block;
             position: relative;
             padding: 10px 25px;
             background-color: var(--download-btn);
-            color: white;
+            color: var(--text-color);
             font-family: sans-serif;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             text-align: center;
             text-indent: 15px;
             border: none;
             margin: 17px 50px 50px 100px;
             width: 190px;
+            border-radius: 2px;
+            top: 3px;
            }
            
            .buttonDownload:hover {
-            background-color: #FC7300;
-            color: white;
+            background-color: var(--download-btn);
+            color: var(--text-color);
            }
            
            .buttonDownload:before, .buttonDownload:after {
@@ -286,17 +305,31 @@
             display: flex !important;;
             margin: 0 50px 0 100px;
             border-radius: 100%;
+            outline: none;
+            transition: all 0.3s;
            }
            .media-icons {
-            margin: 5px;
-            border: 1px solid #cdefbd;
+            display: space-between;
+            margin: 6px;
+            box-shadow:  0 0 1em .25em var(--social-icon-color),
+            0 0 4em 1em var(--glow-spread-social-icon-color),
+            inset 0 0 .75em .25em var(--social-icon-color);
+            border: .25em var(--social-icon-color);
             border-radius: 100%;
             width: 50px;
             height: 50px;
-            outline: none !important;
            }
            .media-icons:hover:active{
-                background-color: #E5E5CB;
+            box-shadow: 0 0 0.6em .25em var(--social-icon-color),
+            0 0 2.5em 2em var(--glow-spread-social-icon-color),
+            inset 0 0 .5em .25em var(--social-icon-color);
+    
+            }
+           .media-icons::after {
+            background-color: var(--social-icon-color);
+            box-shadow: 0 0 1em .25em var(--social-icon-color),
+                    0 0 4em 2em var(--glow-spread-social-icon-color),
+                    inset 0 0 .75em .25em var(--social-icon-color);
            }
 
            .social-media svg{
@@ -310,7 +343,10 @@
            .social-media svg:hover{
             width: 50px;
             height: 50px;
-            background-color: #B9F3FC;
+            background-color: var(--social-icon-color);
+            box-shadow: 0 0 1em .25em var(--social-icon-color),
+                    0 0 4em 2em var(--glow-spread-social-icon-color),
+            inset 0 0 .75em .25em var(--social-icon-color);
             margin: 0px 10px 0 1px;
             border-radius: 100%;
             
@@ -318,16 +354,15 @@
           .profile-img{
             display: flex;
             border-radius: 100%;
-            margin-left: 60rem;
-            width: 100%;
+            justify-content:center;
+            margin: 90px 100px;
            }
            .profile-img img{
-            position: absolute;
+            display: flex;
             background: var(--bg-color-icons);
             border-radius: 100%;
-            top: 50px;
-            width: 400px;
-            height: 400px;
+            width: 200px;
+            height: 200px;
            }
          
          /* END HOME SECTION AND HERO SECTION */
@@ -342,8 +377,8 @@
             width: 100%;
             height: 100vh;
             border-radius: 50%;
-            padding-inline: 1.2rem;
-            margin-inline: auto;
+            /* padding-inline: 1.2rem;
+            margin: 100px 50px 0 100px; */
         }
         .card {
             display: flex;
@@ -351,7 +386,8 @@
             box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0..05);
             transition: background-color 0.25s;
             height: 40rem;
-           
+            width: 100%;
+            
         }
         .card-image {
             flex: 2;
@@ -365,7 +401,8 @@
         }
         .card-body {
             flex: 1;
-            padding: 5rem;
+            /* padding: 5rem; */
+            width: 100%;
         }
         .card-title {
             font-family: 'Playfair Display', sans-serif;
@@ -400,18 +437,7 @@
         .card-btn:hover span {
             transform: translateX(0.75rem);
         }
-/*         
-        @media screen and (max-width: 56.25em) {
-            .card {
-                flex-direction: column;
-            }
-            .card-body {
-                padding: 2.5rem;
-            }
-            .card-btn {
-                margin-top: 1.5rem;
-            }
-        } */
+
         /* end about section */
 
         /* PROJECT SECTION */
@@ -424,15 +450,17 @@
             margin-bottom: 50rem;
         }
          .box{
-            background-color: #ff9950;
+            background-color: transparent;
+            width: 300px;
             height: 200px;
-            width: 400px;
+            perspective: 1000px;
             display: flex;
             flex: 1 0 100;
+            flex-direction: column;
             border-radius: 10px;
             margin: 10px;
             top: 0;
-            gap: 50em;
+            gap: 5em;
             
         }
         .box:hover {
@@ -451,20 +479,83 @@
             outline: none;
         }
         .box img {
-            height: 180px;
-            width: 380px;
+            width: 280px;
+            height: 150px;
             margin: 10px;
             object-fit: cover;
         }
 
 
-@media only screen and (max-width: 600px)   { 
+@media screen and (max-width: 500px)   { 
     /* STYLES HERE */
+    .navbar .nav-menu {
+        padding: auto;
+        margin:auto;
+        width: 100%;
+   }
+    nav ul {
+        /* position: fixed; */
+        width: 100%;
+        background: #2f3640;
+        top: 80px;
+        left: 0;
+        text-align: center;
+        
+       }
+    nav li {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+        line-height: 30px;
+    }
+    nav a {
+        font-size: 20px;
+
+    }
+    a.active,a:hover {
+        border: none;
+        color: #3498db;
+        transition: .5s;
+    }
+    .nav-logo {
+        display: none;
+    }
     section{
         width: 100%;
         text-align: center;
         margin: auto;
     }
+    #home h3 {
+        text-align: justify;
+        font-size: 30px;
+        color: var(--text-color);
+    }
+    #home p {
+        text-align: justify;
+        justify-content: center;
+        font-size: 20px;
+        color: var(--text-color);
+    }
+    .buttonDownload {
+        display: flex;
+        justify-content: center;
+       }
+       
+    .profile-img{
+        /* position: relative; */
+        display: flex;
+        border-radius: 100%;
+        justify-content:center;
+        margin: 90px 100px;
+        }
+        .profile-img img{
+        display: flex;
+        background: var(--bg-color-icons);
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+        
+        }
     #about{
         width: 100%;
     }
@@ -489,9 +580,11 @@
     nav .hamburger {
         display: block;
     }
-    /* nav #icon {
-        display: block;
-    } */
+    .navbar .nav-menu {
+        padding: auto;
+        margin:auto;
+        width: 100%;
+   }
     nav ul {
         /* position: fixed; */
         width: 100%;
@@ -502,9 +595,9 @@
         
        }
     nav li {
-        /* display: none; */
-        display: block;
-        margin: 50px 0;
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
         line-height: 30px;
     }
     nav a {
@@ -515,6 +608,9 @@
         border: none;
         color: #3498db;
         transition: .5s;
+    }
+    .nav-logo {
+        display: none;
     }
     #about about-img{
         display: none;

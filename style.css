@@ -439,9 +439,6 @@
             clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
             background: var(--container-bg-color);
         }
-        /* .card ol {
-            
-        } */
         /* end about section */
 
         /* PROJECT SECTION */
@@ -505,23 +502,19 @@
         border-radius: 5px;
         gap: 20px;         
     } 
+    #contact form {
+        width: 100%;
+        margin: 5px auto 5px 25px;   
+    } 
     #contact .header-title {
         text-align: center;  
         font-size: 30px;
         margin: 15px;
     } 
-    /* .card form {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-        } */
-
     .styled-input {
         float: left;
         width: 293px;
-        margin: 10px 10px 5px 10px;
+        margin: 10px auto 5px 10px;
         position: relative;
         border-radius: 4px;
     }
@@ -532,7 +525,6 @@
         max-width: 100%;
         
     }
-
     .styled-input label {
         color: var(--text-color);
         padding: 1.3rem 30px 1rem 30px;
@@ -576,6 +568,22 @@
         min-height: 2em;
         resize: none;
     }
+    .contact-info {
+        margin: 20px auto 10px 10px;
+    }
+    .contact-info p {
+        margin: 5px 0 0 10px;
+        font-size: 15px;
+    }
+    
+    .responsive-iframe {
+        width: 600px;
+        height: 400px;
+      }
+    iframe {
+        margin: 10px auto 0 10px;
+      }
+      
 
     .submit-btn {
         float: left;

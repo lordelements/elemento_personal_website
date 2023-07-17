@@ -1,7 +1,7 @@
         
        :root {
         --text-color: #fff;
-        --bg-color: #121212;
+        --bg-color: #2C3333;
         --slider-bg-color: #b0b0b0;
         --bg-nav-color: rgba(0, 0, 0, 0.089);
         --main-text-color:  #fff;
@@ -213,12 +213,14 @@
         }
         #home{
             padding: 10px;
+            min-height: 200px;
+            margin-bottom: 0;
         }
         #home .hero-section {
             text-align: justify;
             font-size: 30px;
             color: var(--text-color);
-            margin: 10rem 50px 0 100px;
+            margin: 13rem 50px 0 100px;
             /* margin: 100px 50px 0 100px; */
         }
         #home p {
@@ -425,6 +427,7 @@
         }     
         .card-header {
             padding: 20px 10px;
+            margin: 15px auto;
         }
         .card-header h1 {
             text-align: center;
@@ -447,44 +450,77 @@
             flex-wrap: wrap;
             justify-content: center;
             width: 100%;
-            height: 100%;
+            height: 350px;
             margin-bottom: 50rem;
-        }
-         .box{
-            background-color: transparent;
-            width: 300px;
-            height: 200px;
-            perspective: 1000px;
-            display: flex;
-            flex: 1 0 100;
-            flex-direction: column;
-            border-radius: 10px;
-            margin: 10px;
-            top: 0;
+            }
+        #project .photo-grid-item img{
+            width: 100%;
+            height: 150px;
+          }
+          #project .photo-grid-container {
+            width: 100%;
+            column-count: 5;
+            column-width: 300px;
+            margin: 10px auto auto 15px;
+          }
+          #project .photo-grid-item {
+            margin: 0 auto 15px;
+            max-width: 400px;
+            width: 100%;
             gap: 5em;
-            
-        }
-        .box:hover {
+          }
+          /* #project .photo-grid-item:hover {
             background-color: #ff9950;
             transform: scale(1.1);
             transition: ease-in-out;
             
-        }
-        .box a{
-            /* display: grid; */
-            place-items: center;
-            text-align: center;
+        } */
+
+
+        /* Skill section */
+        #skill h1 {
+            margin-top: 10rem;
+          }
+       #skill .row {
+            display: flex;
             justify-content: center;
-            text-decoration: none;
-            border: none;
-            outline: none;
-        }
-        .box img {
-            width: 280px;
-            height: 150px;
-            margin: 10px;
-            object-fit: cover;
-        }
+            flex-wrap: wrap;
+            padding: 0 4px;
+          } 
+          /* Create four equal columns that sits next to each other */
+          #skill .column {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 6%;
+            height: 6%;
+            margin: 10px 25px 10px 25px;
+          }
+          .column .list-svg {
+            margin: 15px auto 4px 5px;
+          }
+          .column img {
+            vertical-align: middle;
+            width: 55px;
+            height: 55px;
+          }
+          
+          /* Responsive layout - makes a two column-layout instead of four columns */
+          @media screen and (max-width: 800px) {
+            #skill .column {
+              flex: 50%;
+              max-width: 50%;
+            }
+          }
+          
+          /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+          @media screen and (max-width: 600px) {
+            #skill .column {
+              flex: 100%;
+              max-width: 100%;
+            }
+          }
+          
 
     /* contact styling */
     #contact .container {
@@ -569,11 +605,19 @@
         resize: none;
     }
     .contact-info {
-        margin: 20px auto 10px 10px;
+        margin: 5px auto 5px 25px;
+    }
+    .contact-info svg{
+        width: 20px;
+        height: 15px;
+    }
+    .contact-info a {
+        text-decoration: none;
+        color: var(--main-text-color);
     }
     .contact-info p {
         margin: 5px 0 0 10px;
-        font-size: 15px;
+        font-size: 17px;
     }
     
     .responsive-iframe {
@@ -756,6 +800,15 @@
    nav a {
     font-size: 17px;
    }
+
+   #project .photo-grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    column-count: 5;
+    column-width: 300px;
+    margin: 5px auto 20px auto;
+  }
 }
 
 @media (max-width: 909px) {

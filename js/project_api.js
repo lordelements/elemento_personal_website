@@ -1,3 +1,4 @@
+// JavaScript
 const projects = [
     {
         title: 'Product Landing Page',
@@ -48,7 +49,7 @@ function displayProjects() {
             <div class="project-info">
                 <h3>${project.title}</h3>
                 <div class="project-link">
-                    <a href="${project.link}" target="_blank">View Project</a>
+                    <a href="${project.link}" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
             </div>
         `;
@@ -60,10 +61,10 @@ function displayProjects() {
 // Call the function to display the projects when the page loads
 document.addEventListener('DOMContentLoaded', displayProjects);
 
-// View more projects button functionality
+// View more projects button functionality (now that it's uncommented in HTML)
 document.querySelector('.view-more-btn').addEventListener('click', function() {
-    console.log('Loading more projects...');
-    // Here you would typically fetch more projects from a server
-    // For demo purposes, we'll just show a message
-    // alert('Loading more projects...');
+    // In a real application, you would load more projects here.
+    // For now, you could link to a separate "All Projects" page
+    // or implement infinite scrolling.
+    alert('This would typically load more projects or navigate to an "All Projects" page!');
 });

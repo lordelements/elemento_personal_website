@@ -5,156 +5,113 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Andrian Elemento Portfolio</title>
 
-    <!-- google fonts -->
+    <!-- Google Fonts: Nunito Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <title>elemento portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- cdn parallax effect -->
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-
-    <style>
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #333333;
-            transition: opacity 0.7s, visibility 0.75s;
-        }
-
-        .loader--hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader::after {
-            content: "";
-            width: 75px;
-            height: 75px;
-            border: 15px solid #dddddd;
-            border-top-color: #009578;
-            border-radius: 50%;
-            animation: loading 0.75s ease infinite;
-        }
-
-        @keyframes loading {
-            from {
-                transform: rotate(0turn);
-            }
-
-            to {
-                transform: rotate(1turn);
-            }
-        }
-    </style>
-
     <!-- LOADING -->
     <div class="loader"></div>
-    
-    <nav class="navbar" id="navbars">
-    <label class="nav-logo">
-        ELe|\<span>/|EnTz</span>
-    </label>
-    <ul class="nav-menu" id="navMenu">
-        <li class="nav-item"><a href="#home" class="active">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About me</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link">Portfolio</a></li>
-        <li class="nav-item"><a href="#skill" class="nav-link">Skills</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="navbar-flex-center">
-        <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false">
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </button>
-        <div class="darklight-mode">
-            <label class="toggle">
-                <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
-                <span class="slider"></span>
-            </label>
+
+    <!-- Custom Message Box -->
+    <div class="message-box-overlay" id="messageBox">
+        <div class="message-box-content">
+            <h3 id="messageBoxTitle"></h3>
+            <p id="messageBoxMessage"></p>
+            <button id="messageBoxClose">OK</button>
         </div>
     </div>
-</nav>
 
+    <nav class="navbar" id="navbars">
+        <label class="nav-logo">
+            ELe|\<span>/|EnTz</span>
+        </label>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About me</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link">Portfolio</a></li>
+            <li class="nav-item"><a href="#skill" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="navbar-flex-center">
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false">
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </button>
+            <!-- Dark/Light Mode Toggle -->
+            <div class="darklight-mode">
+                <label class="toggle">
+                    <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
 
-    <!-- main -->
+    <!-- Main Content -->
     <main class="content">
-        <!-- start home section-->
-        <section id="home">
-            <h3 class="hero-section">I am <span>Andrian Ele|\/|ento</span>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <h3 class="hero-section" data-aos="fade-right" data-aos-duration="1000">I am <span>Andrian Ele|\/|ento</span>
                 A Self thought prog<span>a|\/|er</span>
             </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolor totam accusantium ipsam, <br>
-                iusto officiis voluptate nam tempora officia dolores inventore.</p>
-            <div class="social-media">
-                <a class="media-icons" href="https://www.facebook.com/andrian.elemento.9">
+            <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                Hi there! I'm a passionate self-taught programmer with a knack for building engaging web experiences. I love
+                turning ideas into functional and visually appealing websites. Explore my work and let's connect!
+            </p>
+            <div class="social-media" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <a class="media-icons" href="https://www.facebook.com/andrian.elemento.9" target="_blank" aria-label="Facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h60.42V6.26S260.43
-                         0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+                        <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h60.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
                     </svg>
                 </a>
-                <a class="media-icons" href="https://github.com/lordelements">
+                <a class="media-icons" href="https://github.com/lordelements" target="_blank" aria-label="GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                        <path
-                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 
-                            5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7
-                             1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
                     </svg>
                 </a>
-                <a class="media-icons" href="https://www.instagram.com/">
+                <a class="media-icons" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path
-                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 
-                            189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 
-                            14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 11.7-29.5 9-99.5 9-132.1s2.7 102.7-9 132.1z" />
                     </svg>
                 </a>
-                <a class="media-icons" href="https://twitter.com/AndrianElement1">
+                <a class="media-icons" href="https://twitter.com/AndrianElement1" target="_blank" aria-label="Twitter">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path
-                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558
-                             298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 
-                             130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                        <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
                     </svg>
                 </a>
             </div>
-            <!-- </div> -->
-            <a class="buttonDownload" href="AndrianElemento_Resume(PDF).pdf" download>Download CV</a>
+            <a class="buttonDownload" href="AndrianElemento_Resume(PDF).pdf" download data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">Download CV</a>
         </section>
-        <!-- end home section-->
+        <!-- End Home Section -->
 
+        <!-- About Section -->
         <section id="about" class="section">
             <div class="container">
-                <!-- Section Title -->
                 <h1 class="title-page" data-aos="fade-up" data-aos-duration="1000">ABOUT ME</h1>
-
-                <!-- Row for Profile and Education -->
                 <div class="row">
-                    <!-- Profile Section -->
-                    <div class="my_profile">
+                    <div class="my_profile" data-aos="fade-right" data-aos-duration="1000">
                         <img class="pic_img" src="img/my_profile.jpg" alt="my_profile">
                     </div>
-
-                    <!-- Education Card -->
-                    <div class="card">
+                    <div class="card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <div class="card-header">
                             <h1>EDUCATION</h1>
                         </div>
@@ -180,30 +137,30 @@
                 </div>
             </div>
         </section>
+        <!-- End About Section -->
 
-       <section id="projects" class="section">
+        <!-- Projects Section -->
+        <section id="projects" class="section">
             <div class="container">
                 <h1 class="title-page" data-aos="fade-up" data-aos-duration="1000">PORTFOLIO</h1>
-                
                 <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
                     Explore my recent work and ongoing projects
                 </div>
-                
                 <div class="project-grid" data-aos="fade-up" data-aos-delay="300">
-                    <!-- Project cards will be dynamically inserted here -->
+                    <!-- Project cards will be dynamically inserted here by JavaScript -->
                 </div>
-                
-                <div class="view-more-container" data-aos="fade-up" data-aos-delay="400">
+                <div class="view-more-container">
                     <button class="view-more-btn">View More Projects</button>
                 </div>
             </div>
         </section>
+        <!-- End Projects Section -->
 
-        <!-- Skill section -->
+        <!-- Skill Section -->
         <section id="skill" class="section">
             <h1 class="title-page" data-aos="fade-up" data-aos-duration="1000">SKILLS</h1>
             <div class="skills-container">
-                <div class="skills-grid">
+                <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
                     <div class="skill-item">
                         <div class="skill-icon">
                             <img src="img/html-5-svg.svg" alt="HTML5" class="skill-img">
@@ -261,16 +218,15 @@
                 </div>
             </div>
         </section>
+        <!-- End Skill Section -->
 
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
                 <h1 class="title-page" data-aos="fade-up" data-aos-duration="1000">GET IN TOUCH</h1>
-                
                 <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
                     Let's discuss your project and how I can help you achieve your goals
                 </div>
-                
                 <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="300">
                     <div class="contact-info">
                         <div class="info-card">
@@ -285,7 +241,7 @@
                                 <p>lordelements@example.com</p>
                             </div>
                         </div>
-                        
+
                         <div class="info-card">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
@@ -297,138 +253,72 @@
                                 <p>+1 (555) 123-4567</p>
                             </div>
                         </div>
-                        
+
                         <div class="info-card">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                     <circle cx="12" cy="10" r="3"></circle>
                                 </svg>
                             </div>
                             <div>
                                 <h3>Location</h3>
-                                <p>San Francisco, CA</p>
+                                <p>Magallanes, Sorsogon, Philippines</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="contact-form">
                         <div class="form-card">
                             <form id="contactForm">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="subject">Subject</label>
-                                    <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+                                    <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject of your message" required>
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="message">Message</label>
-                                    <textarea id="message" name="message" rows="5" class="form-control" placeholder="Your message here..." required></textarea>
+                                    <textarea id="message" name="message" class="form-control" rows="5" placeholder="Message here..." required></textarea>
                                 </div>
-                                
                                 <button type="submit" class="submit-btn">
                                     Send Message
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                     </svg>
                                 </button>
                             </form>
+                            <div class="success-message" id="contactSuccessMessage">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-8.66"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <h3>Message Sent!</h3>
+                                <p>Thank you for reaching out. I'll get back to you as soon as possible!</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const contactForm = document.getElementById('contactForm');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = new FormData(contactForm);
-                const formDataObj = {};
-                
-                formData.forEach((value, key) => {
-                    formDataObj[key] = value;
-                });
-                
-                // Here you would typically send the form data to a server
-                console.log('Form submitted with data:', formDataObj);
-                
-                // Show success message
-                const formCard = contactForm.closest('.form-card');
-                formCard.innerHTML = `
-                    <div class="success-message">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#198754" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 10.01 9 11.01"></polyline>
-                        </svg>
-                        <h3>Message Sent Successfully!</h3>
-                        <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
-                    </div>
-                `;
-            });
-        }
-    });
-    </script>
-
-
+        <!-- End Contact Section -->
     </main>
 
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; background-color: var(--bg-nav-color); color: var(--text-color); font-size: 0.9rem; transition: background-color 0.3s ease, color 0.3s ease;">
+        <p>&copy; <span id="current-year"></span> Andrian Elemento. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/project_api.js"></script>
-    <script src="js/darkmode.js"></script>
-    <!-- <script src="js/scroll.js"></script> -->
-
-
-    <script>
-        AOS.init();
-    </script>
-
-    <script>
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            
-            navMenu.classList.toggle('active');
-            mobileMenuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-            
-            // Animation for hamburger icon
-            const bars = document.querySelectorAll('.bar');
-            bars[0].classList.toggle('top-bar');
-            bars[1].classList.toggle('middle-bar');
-            bars[2].classList.toggle('bottom-bar');
-        }
-
-
-        // loader animation
-         window.addEventListener("load", () => {
-            const loader = document.querySelector(".loader");
-
-            loader.classList.add("loader--hidden");
-
-            document.querySelector(".loader").addEventListener("transitioned", () => {
-                document.body.removeChild(document.querySelector(".loader"));
-            });
-
-        });
-
-    </script>
-
 
 </body>
 
